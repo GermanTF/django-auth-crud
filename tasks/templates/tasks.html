@@ -5,7 +5,12 @@
 <main class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h1 class="text-center display-3 py-5">Tasks Pending</h1> <!--Revisar-->
+            
+            {% if request.path == '/tasks_completed/' %}
+                <h2 class="text-center display-3 py-5">Tasks Completed</h2> <!--Revisar-->
+            {% else %}
+                <h2 class="text-center display-3 py-5">Tasks Pending</h2> <!--Revisar-->
+            {% endif %}
 
             <ul class="list-group">
                 {% for task in tasks  %}
